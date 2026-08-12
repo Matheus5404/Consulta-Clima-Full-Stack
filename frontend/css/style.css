@@ -1,0 +1,306 @@
+/* =========================
+   FUNDO DA PÁGINA
+========================= */
+
+body {
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b
+    );
+
+    color: #f8fafc;
+
+    font-family: Arial, sans-serif;
+}
+
+main {
+    padding-bottom: 60px;
+}
+
+
+/* =========================
+   TÍTULOS E TEXTOS
+========================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #f8fafc;
+}
+
+section h2 {
+    font-weight: 600;
+}
+
+/* Corrige textos que usam Bootstrap text-secondary */
+
+.text-secondary {
+    color: #cbd5e1 !important;
+}
+
+
+/* =========================
+   CAMPO DE PESQUISA
+========================= */
+
+.form-control,
+.form-select {
+    background-color: #1e293b;
+
+    color: #f8fafc;
+
+    border: 1px solid #475569;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: #1e293b;
+
+    color: #ffffff;
+
+    border-color: #3b82f6;
+
+    box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+}
+
+/* Cor do texto "Digite o nome da cidade" */
+
+.form-control::placeholder {
+    color: #94a3b8;
+}
+
+
+/* =========================
+   SELECT
+========================= */
+
+.form-select option {
+    background-color: #1e293b;
+    color: #f8fafc;
+}
+
+
+/* =========================
+   BOTÃO BUSCAR
+========================= */
+
+#botao-buscar {
+    min-width: 100px;
+
+    background-color: #2563eb;
+
+    border-color: #2563eb;
+}
+
+#botao-buscar:hover {
+    background-color: #1d4ed8;
+
+    border-color: #1d4ed8;
+}
+
+
+/* =========================
+   CARD PRINCIPAL DO CLIMA
+========================= */
+
+#resultado-clima .card {
+    background-color: #1e293b;
+
+    color: #f8fafc;
+
+    border: 1px solid #334155;
+
+    border-radius: 20px;
+}
+
+#resultado-clima .card-body {
+    padding: 40px;
+}
+
+#nome-cidade {
+    color: #ffffff;
+}
+
+#localizacao {
+    color: #cbd5e1;
+}
+
+#temperatura {
+    color: #60a5fa;
+
+    font-weight: bold;
+}
+
+#condicao {
+    color: #e2e8f0;
+
+    font-weight: 500;
+}
+
+#resultado-clima hr {
+    border-color: #64748b;
+}
+
+
+/* =========================
+   ÚLTIMAS CONSULTAS
+========================= */
+
+#ultimas-consultas .card {
+    background-color: #1e293b;
+
+    color: #f8fafc;
+
+    border: 1px solid #334155;
+
+    border-radius: 16px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#ultimas-consultas .card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================
+   CIDADES MAIS PESQUISADAS
+========================= */
+
+#cidades-mais-consultadas .card {
+    background-color: #1e293b;
+
+    color: #f8fafc;
+
+    border: 1px solid #334155;
+
+    border-radius: 16px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#cidades-mais-consultadas .card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+#carregando-clima {
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+#historico-completo .card {
+    background-color: #1e293b;
+    color: #f8fafc;
+
+    border: 1px solid #334155;
+    border-radius: 16px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#historico-completo .card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+#icone-clima {
+    font-size: 4rem;
+    line-height: 1;
+}
+
+#temperatura {
+    color: #60a5fa;
+}
+
+/* =========================
+   TEMAS DO CLIMA
+========================= */
+
+#resultado-clima .card {
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Céu limpo */
+
+#resultado-clima .card.clima-limpo {
+    border: 1px solid #3b82f6;
+
+    box-shadow:
+        0 0 20px rgba(59, 130, 246, 0.20);
+}
+
+
+/* Nublado */
+
+#resultado-clima .card.clima-nublado {
+    border: 1px solid #64748b;
+
+    box-shadow:
+        0 0 20px rgba(100, 116, 139, 0.20);
+}
+
+
+/* Chuva */
+
+#resultado-clima .card.clima-chuva {
+    border: 1px solid #2563eb;
+
+    box-shadow:
+        0 0 20px rgba(37, 99, 235, 0.30);
+}
+
+
+/* Tempestade */
+
+#resultado-clima .card.clima-tempestade {
+    border: 1px solid #8b5cf6;
+
+    box-shadow:
+        0 0 20px rgba(139, 92, 246, 0.30);
+}
+
+
+/* Neve */
+
+#resultado-clima .card.clima-neve {
+    border: 1px solid #e2e8f0;
+
+    box-shadow:
+        0 0 20px rgba(226, 232, 240, 0.20);
+}
+
+/* =========================
+   TEXTOS DENTRO DOS CARDS
+========================= */
+
+.card-title {
+    color: #ffffff;
+}
+
+.card p {
+    color: #e2e8f0;
+}
+
+.card small {
+    color: #94a3b8 !important;
+}

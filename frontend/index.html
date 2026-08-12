@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Consulta Clima</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Nosso CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <main class="container mt-5">
+      <h1 class="text-center mb-4">Consulta de Clima</h1>
+
+      <p class="text-center text-secondary">
+        Consulte o clima atual de qualquer cidade.
+      </p>
+
+      <div class="row justify-content-center mt-4">
+        <div class="col-md-8">
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              id="cidade"
+              placeholder="Digite o nome da cidade"
+            />
+
+            <button class="btn btn-primary" id="botao-buscar">Buscar</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="area-cidades" class="row justify-content-center mt-3 d-none">
+        <div class="col-md-8">
+          <label for="lista-cidades" class="form-label">
+            Escolha a localização:
+          </label>
+
+          <select id="lista-cidades" class="form-select"></select>
+        </div>
+      </div>
+
+      <div id="carregando-clima" class="text-center text-light mb-3 d-none">
+        Carregando clima...
+      </div>
+
+      <section
+        id="resultado-clima"
+        class="row justify-content-center mt-5 d-none"
+      >
+        <div class="col-md-8">
+          <div class="card shadow">
+            <div class="card-body text-center">
+              <h2 class="card-title" id="nome-cidade"></h2>
+
+              <p class="text-secondary" id="localizacao"></p>
+
+              <div id="icone-clima" class="display-4 mb-3"></div>
+
+              <h3 class="display-3" id="temperatura"></h3>
+
+              <p class="fs-5" id="condicao"></p>
+
+              <hr />
+
+              <div class="row mt-4">
+                <div class="col-md-4">
+                  <h6>Sensação térmica</h6>
+
+                  <p id="sensacao-termica"></p>
+                </div>
+
+                <div class="col-md-4">
+                  <h6>Umidade</h6>
+
+                  <p id="umidade"></p>
+                </div>
+
+                <div class="col-md-4">
+                  <h6>Vento</h6>
+
+                  <p id="vento"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-5">
+        <h2 class="text-center mb-4">Últimas consultas</h2>
+
+        <div id="ultimas-consultas" class="row g-3"></div>
+      </section>
+
+      <section class="mt-5">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2 class="mb-0">Histórico completo</h2>
+
+          <button id="botao-historico" class="btn btn-outline-light">
+            Ver histórico
+          </button>
+        </div>
+
+        <div class="row mt-3 mb-4 g-3">
+          <div class="col-lg-6">
+            <div class="input-group">
+              <input
+                type="text"
+                id="filtro-historico"
+                class="form-control"
+                placeholder="Filtrar histórico por cidade"
+              />
+
+              <button id="botao-filtrar-historico" class="btn btn-primary">
+                Filtrar
+              </button>
+
+              <button id="botao-limpar-filtro" class="btn btn-outline-light">
+                Limpar
+              </button>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="input-group">
+              <input
+                type="number"
+                step="0.1"
+                id="filtro-temperatura"
+                class="form-control"
+                placeholder="Temperatura mínima"
+              />
+
+              <button id="botao-filtrar-temperatura" class="btn btn-primary">
+                Filtrar temperatura
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="historico-completo" class="row g-3 d-none"></div>
+      </section>
+
+      <section class="mt-5">
+        <h2 class="text-center mb-4">Cidades mais pesquisadas</h2>
+
+        <div id="cidades-mais-consultadas" class="row g-3"></div>
+
+        <div class="text-center mt-4">
+          <button
+            id="botao-ver-mais-cidades"
+            class="btn btn-outline-light d-none"
+          >
+            Ver histórico de cidades
+          </button>
+        </div>
+      </section>
+
+      <div id="mensagem" class="row justify-content-center mt-3 d-none">
+        <div class="col-md-8">
+          <div id="mensagem-conteudo" class="alert" role="alert"></div>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="./js/index.js"></script>
+  </body>
+</html>
